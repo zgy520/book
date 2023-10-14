@@ -17,7 +17,7 @@ class CatalogServiceApplicationTests {
 
     @Test
     void whenPostRequestThenBookCreated() {
-        Book book = new Book("123", "Title", "Author", 9.9);
+        Book book = new Book("123dd", "Title", "Author", 9.9);
 
         webTestClient
                 .post()
