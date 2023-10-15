@@ -12,7 +12,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-@ActiveProfiles("integration")
 class CatalogServiceApplicationTests {
     @Autowired
     private WebTestClient webTestClient;
