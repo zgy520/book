@@ -65,3 +65,16 @@ tasks.named('test') {
 bootRun {
     systemProperty 'spring.profiles.active', 'default'
 }
+
+bootBuildImage {
+    imageName="${project.name}"
+    environment=["BP_JVM_VERSION" : "17.*"]
+
+    docker {
+        publishRegistry {
+            username = project.findProperty("userName")
+            password = project.findProperty("pwd")
+            url = project.findProperty("url")
+        }
+    }
+}

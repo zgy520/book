@@ -26,4 +26,9 @@ public class HomeController {
     public String getGreeting() {
         return bookProperties.getGreeting() + ":" + bookProperties.getEnvtest();
     }
+
+    @GetMapping(value = "/test")
+    public String getTest() {
+        return "rest";
+    }
 }
