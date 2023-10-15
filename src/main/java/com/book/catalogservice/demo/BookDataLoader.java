@@ -21,8 +21,8 @@ public class BookDataLoader {
     @EventListener(ApplicationReadyEvent.class)
     public void loadBookTestData(){
         bookRepository.deleteAll();
-        Book book = Book.of("12", "Native cloud application", "zjx", 99.99);
-        Book book1 = Book.of("344", "Spring Jpa", "zgy", 19.9);
+        Book book = Book.of("12", "Native cloud application", "zjx", 99.99,"dzgydx");
+        Book book1 = Book.of("344", "Spring Jpa", "zgy", 19.9,"dzgydx");
         bookRepository.saveAll(List.of(book,book1));
 
     }

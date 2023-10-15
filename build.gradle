@@ -41,6 +41,8 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-config'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
+    implementation 'org.flywaydb:flyway-core'
+    implementation 'org.flywaydb:flyway-mysql'
 
     runtimeOnly 'mysql:mysql-connector-java:8.0.33'
 
@@ -63,5 +65,5 @@ tasks.named('test') {
 }
 
 bootRun {
-    systemProperty 'spring.profiles.active', 'testdata'
+    systemProperty 'spring.profiles.active', 'default'
 }

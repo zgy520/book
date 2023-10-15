@@ -19,7 +19,7 @@ class CatalogServiceApplicationTests {
 
     @Test
     void whenPostRequestThenBookCreated() {
-        Book book = Book.of("123", "Title", "Author", 9.9);
+        Book book = Book.of("123", "Title", "Author", 9.9,"dzgydx");
 
         webTestClient
                 .post()
