@@ -1,6 +1,8 @@
 package com.book.catalogservice;
 
 import com.book.catalogservice.config.BookProperties;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HomeController {
     private final BookProperties bookProperties;
+    @Autowired
+    private Environment environment;
 
     public HomeController(BookProperties bookProperties) {
         this.bookProperties = bookProperties;
@@ -20,6 +24,6 @@ public class HomeController {
 
     @GetMapping(value = "/")
     public String getGreeting() {
-        return bookProperties.getGreeting();
+        return bookProperties.getGreeting() + ":" + bookProperties.getEnvtest();
     }
 }

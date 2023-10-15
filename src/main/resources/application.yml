@@ -8,3 +8,27 @@ server:
       min-spare: 1
 book:
   greeting: Welcome to the local book catalog!
+  envtest: Welcome to from yml
+spring:
+  application:
+    name: catalog-service
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/book
+    hikari:
+      connection-timeout: 2000
+      maximum-pool-size: 5
+  sql:
+    init:
+      mode: always
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: http://localhost:8888
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh
