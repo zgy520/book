@@ -6,6 +6,7 @@ server:
     threads:
       max: 5
       min-spare: 1
+  shutdown: graceful
 book:
   greeting: Welcome to the local book catalog!
   envtest: Welcome to from yml
@@ -24,6 +25,8 @@ spring:
   cloud:
     config:
       uri: http://localhost:8888
+  lifecycle:
+    timeout-per-shutdown-phase: 15s
 management:
   endpoints:
     web:
